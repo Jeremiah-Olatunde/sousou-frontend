@@ -9,7 +9,7 @@ export function FAQs() {
         <h2 className="capitalize font-sora font-bold tracking-tight text-4xl text-center">
           FAQs
         </h2>
-        <p className="font-inter text-xl text-gray-500 text-center">
+        <p className="font-inter tracking-tight text-xl text-gray-500 text-center">
           Find answers to frequently asked questions.
         </p>
       </header>
@@ -54,7 +54,9 @@ function FAQ({
   return (
     <div className="flex flex-col gap-5 border border-gray-300 rounded-lg p-6">
       <div className="flex justify-between items-center">
-        <span className="font-inter font-semibold text-2xl">{question}?</span>
+        <span className="font-inter font-semibold tracking-tight text-2xl">
+          {question}?
+        </span>
         <button
           type="button"
           className="cursor-pointer"
@@ -64,7 +66,9 @@ function FAQ({
         </button>
       </div>
       {openInternal && (
-        <p className="font-inter text-xl text-gray-500">{answer}</p>
+        <p className="font-inter text-xl text-gray-500 tracking-tight">
+          {answer}
+        </p>
       )}
     </div>
   );

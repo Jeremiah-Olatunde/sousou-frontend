@@ -9,7 +9,7 @@ export function HowItWorks() {
             <h2 className="capitalize font-sora font-bold tracking-tight text-4xl">
               how it works
             </h2>
-            <p className="font-inter text-xl text-gray-500">
+            <p className="font-inter text-xl text-gray-500 tracking-tight ">
               Surely some revelation is at hand, surely the second coming is at
               hand.
             </p>
@@ -49,7 +49,7 @@ function HowItWorksItem({ text }: { text: string }) {
   return (
     <li className="flex gap-2 items-center">
       <IconCircleCheck className="size-6 fill-black stroke-white" />
-      <span className="font-inter text-gray-500 ">{text}</span>
+      <span className="font-inter text-gray-500 tracking-tight">{text}</span>
     </li>
   );
 }

@@ -11,7 +11,7 @@ export function FeatureOverview() {
         <h2 className="capitalize font-sora font-bold tracking-tight text-4xl text-center">
           Feature Overview
         </h2>
-        <p className="font-inter text-xl text-gray-500 text-center">
+        <p className="font-inter text-xl text-gray-500 text-center tracking-tight ">
           Surely some revelation is at hand, surely the second coming is at
           hand.
         </p>

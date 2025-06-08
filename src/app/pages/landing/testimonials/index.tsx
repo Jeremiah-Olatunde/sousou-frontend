@@ -10,7 +10,7 @@ export function Testimonials() {
         <h2 className="capitalize font-sora font-bold tracking-tight text-4xl text-center">
           Testimonials
         </h2>
-        <p className="font-inter text-xl text-gray-500 text-center">
+        <p className="font-inter tracking-tight text-xl text-gray-500 text-center">
           Loved by thousands
         </p>
       </header>
