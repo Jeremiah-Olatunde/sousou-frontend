@@ -16,7 +16,16 @@
   src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
 }
 
+@font-face {
+  font-family: Sora;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/Sora/Sora-VariableFont_wght.ttf");
+}
+
 @theme {
+  --font-sora: Sora;
   --font-inter: Inter;
-  --font-playfair-display: PlayfairDisplay;
+  --font-playfair: PlayfairDisplay;
 }
