@@ -1,5 +1,6 @@
 import { FAQs } from "./faqs";
 import { FeatureOverview } from "./feature-overview";
+import { FromOurBlog } from "./from-our-blog";
 import { Hero } from "./hero";
 import { HowItWorks } from "./how-it-works";
 import { Nav } from "./nav";
@@ -19,6 +20,8 @@ export function Landing() {
       <Testimonials />
       <div className="h-56" />
       <FAQs />
+      <div className="h-56" />
+      <FromOurBlog />
       <div className="h-56" />
     </>
   );
