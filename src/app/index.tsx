@@ -1,7 +1,7 @@
 export function App() {
   return (
     <>
-      <h1 className="text-gray-600 font-bold">hello sousou</h1>
+      <h1 className="font-inter text-gray-600 font-extrabold">hello sousou</h1>
     </>
   );
 }

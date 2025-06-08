@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: PlayfairDisplay;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+
+@theme {
+  --font-inter: Inter;
+  --font-playfair-display: PlayfairDisplay;
+}
