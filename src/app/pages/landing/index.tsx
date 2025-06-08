@@ -1,3 +1,4 @@
+import { FAQs } from "./faqs";
 import { FeatureOverview } from "./feature-overview";
 import { Hero } from "./hero";
 import { HowItWorks } from "./how-it-works";
@@ -16,6 +17,8 @@ export function Landing() {
       <FeatureOverview />
       <div className="h-56" />
       <Testimonials />
+      <div className="h-56" />
+      <FAQs />
       <div className="h-56" />
     </>
   );
