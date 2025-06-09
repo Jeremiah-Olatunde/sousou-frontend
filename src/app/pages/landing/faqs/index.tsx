@@ -17,22 +17,22 @@ export function FAQs() {
       <div className="flex flex-col gap-5">
         <FAQ
           open
-          question="Mere anarchy is loosed upon the world"
+          question="What does the platform do"
           answer="As lightning to the children eased with explanation kind, the truth must dazzle gradually or every man be blind"
         />
 
         <FAQ
-          question="The best lack all conviction"
+          question="Is the loan process fast"
           answer="Some questions were never meant to be answered"
         />
 
         <FAQ
-          question="The center cannot hold"
+          question="Do I need a roommate to use the platform"
           answer="Some questions were never meant to be answered"
         />
 
         <FAQ
-          question="The darkness drops again"
+          question="Who pays my landlord"
           answer="Some questions were never meant to be answered"
         />
       </div>
