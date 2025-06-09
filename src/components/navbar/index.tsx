@@ -1,4 +1,19 @@
-export function Nav() {
+export function NavbarWithAuthButtons() {
+  return (
+    <NavbarBase>
+      <div className="flex gap-3">
+        <LinkWhite text="log in" href="#" />
+        <LinkBlack text="sign up" href="#" />
+      </div>
+    </NavbarBase>
+  );
+}
+
+export function Navbar() {
+  return <NavbarBase />;
+}
+
+function NavbarBase({ children }: { children?: React.ReactNode }) {
   return (
     <nav className="flex justify-between items-center px-24 py-12">
       <span className="font-inter font-black text-4xl tracking-tight">
@@ -14,10 +29,7 @@ export function Nav() {
           </ul>
         </div>
 
-        <div className="flex gap-3">
-          <ButtonWhite text="log in" />
-          <ButtonBlack text="sign up" />
-        </div>
+        {children}
       </div>
     </nav>
   );
@@ -35,36 +47,42 @@ function NavItem({ text }: { text: string }) {
   );
 }
 
-function ButtonWhite({
+function LinkWhite({
   text,
+  href,
   handleClick,
-}: { text: string; handleClick?: () => void }) {
+}: { text: string; href: string; handleClick?: () => void }) {
   return (
     <button
       type="button"
       onClick={handleClick}
       className="cursor-pointer border border-gray-300 py-3 px-6 rounded-sm"
     >
-      <span className="font-inter font-medium tracking-tight text-xl capitalize">
-        {text}
-      </span>
+      <a href={href}>
+        <span className="font-inter font-medium tracking-tight text-xl capitalize">
+          {text}
+        </span>
+      </a>
     </button>
   );
 }
 
-function ButtonBlack({
+function LinkBlack({
   text,
+  href,
   handleClick,
-}: { text: string; handleClick?: () => void }) {
+}: { text: string; href: string; handleClick?: () => void }) {
   return (
     <button
       type="button"
       onClick={handleClick}
       className="cursor-pointer bg-black border border-black py-3 px-6 rounded-sm"
     >
-      <span className="font-inter font-medium tracking-tight text-xl text-white capitalize">
-        {text}
-      </span>
+      <a href={href}>
+        <span className="font-inter font-medium tracking-tight text-xl text-white capitalize">
+          {text}
+        </span>
+      </a>
     </button>
   );
 }

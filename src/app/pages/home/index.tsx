@@ -4,13 +4,13 @@ import { Footer } from "./footer";
 import { FromOurBlog } from "./from-our-blog";
 import { Hero } from "./hero";
 import { HowItWorks } from "./how-it-works";
-import { Nav } from "./nav";
+import { Navbar } from "./navbar";
 import { Testimonials } from "./testimonials";
 
 export function Home() {
   return (
     <>
-      <Nav />
+      <Navbar />
       <div className="h-24" />
       <Hero />
       <div className="h-56" />
