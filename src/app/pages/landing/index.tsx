@@ -1,5 +1,6 @@
 import { FAQs } from "./faqs";
 import { FeatureOverview } from "./feature-overview";
+import { Footer } from "./footer";
 import { FromOurBlog } from "./from-our-blog";
 import { Hero } from "./hero";
 import { HowItWorks } from "./how-it-works";
@@ -23,6 +24,7 @@ export function Landing() {
       <div className="h-56" />
       <FromOurBlog />
       <div className="h-56" />
+      <Footer />
     </>
   );
 }
