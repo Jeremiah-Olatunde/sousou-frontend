@@ -85,13 +85,29 @@ export function FieldEmail() {
   );
 }
 
-export function FieldPassword() {
+export function FieldChoosePassword() {
   return (
     <FormField
       name="password"
       label="choose password"
       placeholder="Enter Password"
     />
+  );
+}
+
+export function FieldPassword() {
+  return (
+    <FormField
+      name="password"
+      label="enter password"
+      placeholder="Enter Password"
+    >
+      <a href="#">
+        <span className="font-inter font-semibold tracking-tight text-sm capitalize">
+          forgot password?
+        </span>
+      </a>
+    </FormField>
   );
 }
 
@@ -118,23 +134,38 @@ export function FieldTermsOfService() {
 }
 
 function FormField({
+  children,
+  label,
   name,
   placeholder,
-  label,
-}: { name: string; placeholder: string; label: string }) {
+}: {
+  children?: React.ReactNode;
+  label: string;
+  name: string;
+  placeholder: string;
+}) {
   return (
     <div className="flex flex-col gap-1">
-      <FormLabel htmlFor={name} text={label} />
+      <FormLabel htmlFor={name} text={label}>
+        {children}
+      </FormLabel>
       <FormInput placeholder={placeholder} name={name} id={name} />
     </div>
   );
 }
 
-function FormLabel({ htmlFor, text }: { htmlFor: string; text: string }) {
+function FormLabel({
+  htmlFor,
+  text,
+  children,
+}: { htmlFor: string; text: string; children?: React.ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="font-inter text-sm capitalize">
-      {text}
-    </label>
+    <div className="flex justify-between items-center">
+      <label htmlFor={htmlFor} className="font-inter text-sm capitalize">
+        {text}
+      </label>
+      {children}
+    </div>
   );
 }
 
