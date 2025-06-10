@@ -1,3 +1,5 @@
+import { LinkWhite, LinkBlack } from "../buttons";
+
 export function NavbarWithAuthButtons() {
   return (
     <NavbarBase>
@@ -44,45 +46,5 @@ function NavItem({ text }: { text: string }) {
         </span>
       </a>
     </li>
-  );
-}
-
-function LinkWhite({
-  text,
-  href,
-  handleClick,
-}: { text: string; href: string; handleClick?: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className="cursor-pointer border border-gray-300 py-3 px-6 rounded-sm"
-    >
-      <a href={href}>
-        <span className="font-inter font-medium tracking-tight text-xl capitalize">
-          {text}
-        </span>
-      </a>
-    </button>
-  );
-}
-
-function LinkBlack({
-  text,
-  href,
-  handleClick,
-}: { text: string; href: string; handleClick?: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className="cursor-pointer bg-black border border-black py-3 px-6 rounded-sm"
-    >
-      <a href={href}>
-        <span className="font-inter font-medium tracking-tight text-xl text-white capitalize">
-          {text}
-        </span>
-      </a>
-    </button>
   );
 }
