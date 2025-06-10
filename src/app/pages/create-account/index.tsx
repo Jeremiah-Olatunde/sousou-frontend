@@ -41,7 +41,7 @@ export function CreateAccount() {
           <FormRedirect
             href="#"
             prompt="already have an account?"
-            text="sign in"
+            text="login"
           />
         </FormContainer>
       </FormSection>
