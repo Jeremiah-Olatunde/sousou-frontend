@@ -1,11 +1,11 @@
-import { LinkWhite, LinkBlack } from "../buttons";
+import { ClickableWhite, ClickableBlack } from "../clickables";
 
 export function NavbarWithAuthButtons() {
   return (
     <NavbarBase>
       <div className="flex gap-3">
-        <LinkWhite text="log in" href="#" />
-        <LinkBlack text="sign up" href="#" />
+        <ClickableWhite type="link" text="log in" href="#" />
+        <ClickableBlack type="link" text="sign up" href="#" />
       </div>
     </NavbarBase>
   );

@@ -1,4 +1,4 @@
-import { ButtonStone } from "../../../components/buttons";
+import { ClickableStone } from "../../../components/clickables";
 import {
   FieldEmail,
   FieldName,
@@ -22,7 +22,7 @@ export function CreateAccount() {
         <FormContainer>
           <FormHeader>
             <FormTitle text="Create an Account" />
-            <ButtonStone text="sign up with google" handleClick={() => {}} />
+            <ClickableStone type="link" href="#" text="sign up with google" />
           </FormHeader>
 
           <div className="h-8" />
