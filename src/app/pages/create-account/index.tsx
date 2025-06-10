@@ -12,7 +12,7 @@ import {
   FormSubmit,
   FormTitle,
 } from "../../../components/form";
-import { Navbar } from "../home/navbar";
+import { Navbar } from "../../../components/navbar";
 
 export function CreateAccount() {
   return (
