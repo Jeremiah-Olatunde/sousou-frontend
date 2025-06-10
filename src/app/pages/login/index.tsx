@@ -1,9 +1,7 @@
 import { ClickableStone } from "../../../components/clickables";
 import {
   FieldEmail,
-  FieldName,
   FieldPassword,
-  FieldTermsOfService,
   Form,
   FormContainer,
   FormHeader,
@@ -14,34 +12,32 @@ import {
 } from "../../../components/form";
 import { Navbar } from "../home/navbar";
 
-export function CreateAccount() {
+export function Login() {
   return (
     <section className="h-screen flex flex-col">
       <Navbar />
       <FormSection>
         <FormContainer>
           <FormHeader>
-            <FormTitle text="Create an Account" />
-            <ClickableStone type="link" href="#" text="sign up with google" />
+            <FormTitle text="Welcome Back!" />
+            <ClickableStone type="link" href="#" text="continue with google" />
           </FormHeader>
 
           <div className="h-8" />
 
           <Form>
-            <FieldName />
             <FieldEmail />
             <FieldPassword />
-            <FieldTermsOfService />
 
-            <FormSubmit text="create account" />
+            <FormSubmit text="login" />
           </Form>
 
           <div className="h-4" />
 
           <FormRedirect
-            href="/login"
-            prompt="already have an account?"
-            text="login"
+            href="/create-account"
+            prompt="don't have an account?"
+            text="sign up"
           />
         </FormContainer>
       </FormSection>
