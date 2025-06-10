@@ -1,3 +1,5 @@
+import { Loader } from "lucide-react";
+
 export function FormSection({ children }: { children: React.ReactNode }) {
   return (
     <section className="grow flex justify-center items-center">
@@ -8,8 +10,16 @@ export function FormSection({ children }: { children: React.ReactNode }) {
 
 export function FormContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-120 border border-stone-200 rounded-xl p-8">
+    <div className="w-120 border border-stone-200 rounded-xl relative p-8">
       {children}
+    </div>
+  );
+}
+
+export function FormLoading() {
+  return (
+    <div className="h-full w-full rounded-xl bg-white/25 backdrop-blur-[2px] absolute top-0 left-0 z-10 flex justify-center items-center">
+      <Loader className="animate-spin size-8 text-stone-400" />
     </div>
   );
 }
