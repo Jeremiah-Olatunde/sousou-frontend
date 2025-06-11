@@ -39,11 +39,18 @@ export function FormTitle({ text }: { text: string }) {
   );
 }
 
-export function Form({ children }: { children: React.ReactNode }) {
+export function Form({
+  children,
+  handleSubmit,
+}: { children: React.ReactNode; handleSubmit?: () => void }) {
   return (
     <form
       className="flex flex-col gap-5"
-      onSubmit={(event) => event.preventDefault()}
+      onSubmit={(event) => {
+        event.preventDefault();
+        if (handleSubmit === undefined) return;
+        handleSubmit();
+      }}
     >
       {children}
     </form>
