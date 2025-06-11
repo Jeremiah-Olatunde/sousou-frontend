@@ -14,7 +14,7 @@ import {
 } from "../../../components/form";
 import { Navbar } from "../../../components/navbar";
 
-export function CreateAccount() {
+export function Register() {
   return (
     <section className="h-screen flex flex-col">
       <Navbar />

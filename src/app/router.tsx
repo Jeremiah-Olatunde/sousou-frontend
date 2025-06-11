@@ -1,8 +1,8 @@
 import { Route, Switch } from "wouter";
 
 import { Home } from "./pages/home";
-import { CreateAccount } from "./pages/create-account";
 import { Login } from "./pages/login";
+import { Register } from "./pages/register";
 
 export function Router() {
   return (
@@ -11,7 +11,7 @@ export function Router() {
         <Route path="/" component={Home} />
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/create-account" component={CreateAccount} />
+        <Route path="/register" component={Register} />
       </Switch>
     </>
   );
