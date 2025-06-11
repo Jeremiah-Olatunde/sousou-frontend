@@ -26,7 +26,7 @@ export function FormLoading() {
 
 export function FormHeader({ children }: { children: React.ReactNode }) {
   return (
-    <header className="flex flex-col gap-6">
+    <header className="flex flex-col gap-4">
       {children}
       <div className="border-b border-stone-200" />
     </header>
@@ -118,6 +118,16 @@ export function FieldPassword() {
         </span>
       </a>
     </FormField>
+  );
+}
+
+export function FieldVerificationCode() {
+  return (
+    <FormField
+      name="verification-code"
+      label="enter verification code"
+      placeholder="e.g VDH9873"
+    />
   );
 }
 
