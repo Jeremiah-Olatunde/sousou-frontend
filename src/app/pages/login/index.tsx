@@ -1,7 +1,7 @@
 import { ClickableStone } from "../../../components/clickables";
 import {
-  FieldChoosePassword,
   FieldEmail,
+  FieldPassword,
   Form,
   FormContainer,
   FormHeader,
@@ -28,7 +28,7 @@ export function Login() {
           <Form>
             <FieldEmail />
 
-            <FieldChoosePassword />
+            <FieldPassword />
             <FormSubmit text="login" />
           </Form>
 
