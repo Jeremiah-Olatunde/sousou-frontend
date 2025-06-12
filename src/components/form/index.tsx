@@ -119,7 +119,7 @@ export function FieldPassword() {
       label="enter password"
       placeholder="Enter Password"
     >
-      <a href="#">
+      <a href="/reset-password">
         <span className="font-inter font-semibold tracking-tight text-sm capitalize">
           forgot password?
         </span>
