@@ -35,7 +35,7 @@ export function Login() {
           <div className="h-4" />
 
           <FormRedirect
-            href="/create-account"
+            href="/register"
             prompt="don't have an account?"
             text="sign up"
           />
