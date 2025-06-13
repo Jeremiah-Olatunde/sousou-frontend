@@ -10,7 +10,7 @@ export function FormSection({ children }: { children: React.ReactNode }) {
 
 export function FormContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-120 border border-stone-200 rounded-xl relative p-8">
+    <div className="border border-stone-200 rounded-xl relative p-8">
       {children}
     </div>
   );
@@ -37,6 +37,14 @@ export function FormTitle({ text }: { text: string }) {
   return (
     <h1 className="font-inter font-semibold text-xl text-center">{text}</h1>
   );
+}
+
+export function FormCols1({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-col gap-5 w-100">{children}</div>;
+}
+
+export function FormCols2({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-row gap-5">{children}</div>;
 }
 
 export function Form({

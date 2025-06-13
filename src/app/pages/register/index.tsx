@@ -13,6 +13,7 @@ import {
   FormSubmit,
   FormTitle,
   FieldVerificationCode,
+  FormCols1,
 } from "../../../components/form";
 import { Navbar } from "../../../components/navbar";
 
@@ -62,12 +63,14 @@ function CreateAccount({ handleSubmit }: { handleSubmit: () => void }) {
         <div className="h-8" />
 
         <Form handleSubmit={handleSubmit}>
-          <FieldName />
-          <FieldEmail />
-          <FieldChoosePassword />
-          <FieldTermsOfService />
+          <FormCols1>
+            <FieldName />
+            <FieldEmail />
+            <FieldChoosePassword />
+            <FieldTermsOfService />
 
-          <FormSubmit text="create account" />
+            <FormSubmit text="create account" />
+          </FormCols1>
         </Form>
 
         <div className="h-4" />
@@ -96,8 +99,10 @@ function VerifyEmail({ handleSubmit }: { handleSubmit: () => void }) {
         <div className="h-8" />
 
         <Form handleSubmit={handleSubmit}>
-          <FieldVerificationCode />
-          <FormSubmit text="verify" />
+          <FormCols1>
+            <FieldVerificationCode />
+            <FormSubmit text="verify" />
+          </FormCols1>
         </Form>
 
         <div className="h-4" />
@@ -126,7 +131,9 @@ function AccountCreated({ handleSubmit }: { handleSubmit: () => void }) {
         <div className="h-8" />
 
         <Form handleSubmit={handleSubmit}>
-          <FormSubmit text="go to dashboard" />
+          <FormCols1>
+            <FormSubmit text="go to dashboard" />
+          </FormCols1>
         </Form>
       </FormContainer>
     </FormSection>

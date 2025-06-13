@@ -1,6 +1,7 @@
 import {
   FieldEmail,
   Form,
+  FormCols1,
   FormContainer,
   FormHeader,
   FormSection,
@@ -25,9 +26,10 @@ export function ResetPassword() {
           <div className="h-8" />
 
           <Form>
-            <FieldEmail />
-
-            <FormSubmit text="request password reset" />
+            <FormCols1>
+              <FieldEmail />
+              <FormSubmit text="request password reset" />
+            </FormCols1>
           </Form>
 
           <div className="h-4" />

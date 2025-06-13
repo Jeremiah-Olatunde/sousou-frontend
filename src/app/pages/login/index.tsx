@@ -3,6 +3,7 @@ import {
   FieldEmail,
   FieldPassword,
   Form,
+  FormCols1,
   FormContainer,
   FormHeader,
   FormRedirect,
@@ -26,10 +27,11 @@ export function Login() {
           <div className="h-8" />
 
           <Form>
-            <FieldEmail />
-
-            <FieldPassword />
-            <FormSubmit text="login" />
+            <FormCols1>
+              <FieldEmail />
+              <FieldPassword />
+              <FormSubmit text="login" />
+            </FormCols1>
           </Form>
 
           <div className="h-4" />
