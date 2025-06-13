@@ -5,7 +5,7 @@ export function NavbarWithAuthButtons() {
     <NavbarBase>
       <div className="flex gap-3">
         <ClickableWhite type="link" text="log in" href="/login" />
-        <ClickableBlack type="link" text="sign up" href="/create-account" />
+        <ClickableBlack type="link" text="sign up" href="/register" />
       </div>
     </NavbarBase>
   );
