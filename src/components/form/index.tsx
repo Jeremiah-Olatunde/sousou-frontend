@@ -53,7 +53,7 @@ export function Form({
 }: { children: React.ReactNode; handleSubmit?: () => void }) {
   return (
     <form
-      className="flex flex-col gap-5"
+      className="flex flex-col gap-5 w-min"
       onSubmit={(event) => {
         event.preventDefault();
         if (handleSubmit === undefined) return;
@@ -163,6 +163,22 @@ export function FieldTermsOfService() {
           <span className="capitalize underline">privacy policy</span>
         </a>
         .
+      </label>
+    </div>
+  );
+}
+
+export function FieldSourceTrustMeBro() {
+  return (
+    <div className="flex gap-4 max-w-full">
+      <input name="tos" id="tos" type="checkbox" />
+      <label htmlFor="tos">
+        <span className="font-inter font-light tracking-tight text-sm">
+          I hereby declare that the information provided above is true and
+          complete to the best of my knowledge. I understand that providing
+          false information may result in rejection of this application or legal
+          consequences.
+        </span>
       </label>
     </div>
   );
