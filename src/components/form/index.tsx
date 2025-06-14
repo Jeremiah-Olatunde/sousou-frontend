@@ -168,22 +168,24 @@ export function FieldTermsOfService() {
   );
 }
 
-function FormField({
+export function FormField({
   children,
   label,
   name,
   placeholder,
 }: {
   children?: React.ReactNode;
-  label: string;
+  label?: string;
   name: string;
   placeholder: string;
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <FormLabel htmlFor={name} text={label}>
-        {children}
-      </FormLabel>
+      {label && (
+        <FormLabel htmlFor={name} text={label}>
+          {children}
+        </FormLabel>
+      )}
       <FormInput placeholder={placeholder} name={name} id={name} />
     </div>
   );
