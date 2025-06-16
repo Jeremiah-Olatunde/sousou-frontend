@@ -1,4 +1,5 @@
 import { ClickableWhite, ClickableBlack } from "../clickables";
+import { Logo } from "../logo";
 
 export function NavbarWithAuthButtons() {
   return (
@@ -18,11 +19,7 @@ export function Navbar() {
 function NavbarBase({ children }: { children?: React.ReactNode }) {
   return (
     <nav className="flex justify-between items-center px-24 py-12">
-      <a href="/home">
-        <span className="font-inter font-black text-4xl tracking-tight">
-          SouSou
-        </span>
-      </a>
+      <Logo />
 
       <div className="flex items-center gap-10">
         <div className="">
