@@ -8,8 +8,12 @@ import {
   PiggyBank,
   Sparkles,
   UsersRound,
+  X,
+  type LucideIcon,
 } from "lucide-react";
 import { Logo } from "../../../components/logo";
+import { useState } from "react";
+import { invert } from "fp-ts-std/Boolean";
 
 export function Dashboard() {
   return (
@@ -21,78 +25,21 @@ export function Dashboard() {
         <div className="grow-1 p-5 flex flex-col">
           <div className="grow-1">
             <nav>
-              <ul className="flex flex-col gap-2">
-                <li>
-                  <button className="cursor-pointer w-full flex gap-2 items-center p-2 bg-stone-100 border-l-2 border-stone-300">
-                    <House className="size-5 text-stone-600" />
-                    <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                      dashboard
-                    </span>
-                  </button>
-                </li>
-
-                <li>
-                  <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                    <Landmark className="size-5 text-stone-600" />
-                    <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                      loan service
-                    </span>
-                    <span className="">
-                      <ChevronDown className="text-stone-600 size-5" />
-                    </span>
-                  </button>
-
-                  <ul className="pl-10">
-                    <li>
-                      <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                        <PiggyBank className="size-4 text-stone-600" />
-                        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                          Apply for Loan
-                        </span>
-                      </button>
-                    </li>
-                    <li>
-                      <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                        <CircleCheckBig className="size-4 text-stone-600" />
-                        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                          Pre-Qualification
-                        </span>
-                      </button>
-                    </li>
-                    <li>
-                      <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                        <CalendarDays className="size-4 text-stone-600" />
-                        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                          Loan Repayment Plan
-                        </span>
-                      </button>
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                    <UsersRound className="size-5 text-stone-600" />
-                    <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                      roommate matching
-                    </span>
-                    <span className="">
-                      <ChevronDown className="text-stone-600 size-5" />
-                    </span>
-                  </button>
-
-                  <ul className="pl-10">
-                    <li>
-                      <button className="cursor-pointer w-full flex gap-2 items-center p-2">
-                        <Sparkles className="size-4 text-stone-600" />
-                        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-                          Coming soon
-                        </span>
-                      </button>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+              <List>
+                <Item text="dashboard" icon={House} />
+                <Item text="loan services" icon={Landmark}>
+                  <List>
+                    <Item text="apply for loan" icon={PiggyBank} />
+                    <Item text="Pre-Qualification" icon={CircleCheckBig} />
+                    <Item text="loan repayment plan" icon={CalendarDays} />
+                  </List>
+                </Item>
+                <Item text="roommate matching" icon={UsersRound}>
+                  <List>
+                    <Item text="coming soon" icon={Sparkles} />
+                  </List>
+                </Item>
+              </List>
             </nav>
           </div>
           <Support />
@@ -123,4 +70,46 @@ function Support() {
       </a>
     </div>
   );
+}
+
+function Item({
+  children,
+  text,
+  icon: Icon,
+}: {
+  children?: React.ReactNode;
+  text: string;
+  icon: LucideIcon;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li>
+      <button
+        className="cursor-pointer w-full flex gap-2 items-center p-2"
+        onClick={() => setOpen(invert)}
+      >
+        <Icon className="size-5 text-stone-600" />
+        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
+          {text}
+        </span>
+
+        {children && (
+          <span className="">
+            {open ? (
+              <X className="text-stone-600 size-5" />
+            ) : (
+              <ChevronDown className="text-stone-600 size-5" />
+            )}
+          </span>
+        )}
+      </button>
+
+      {open && <div className="pl-8">{children}</div>}
+    </li>
+  );
+}
+
+function List({ children }: { children: React.ReactNode }) {
+  return <ul className="flex flex-col gap-2">{children}</ul>;
 }
