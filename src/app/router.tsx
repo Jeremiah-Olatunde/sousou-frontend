@@ -5,6 +5,7 @@ import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { ResetPassword } from "./pages/reset-password";
 import { LoanApplication } from "./pages/loan-application";
+import { Dashboard } from "./pages/dashboard";
 
 export function Router() {
   return (
@@ -16,6 +17,7 @@ export function Router() {
         <Route path="/register" component={Register} />
         <Route path="/reset-password" component={ResetPassword} />
         <Route path="/loan-application" component={LoanApplication} />
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </>
   );
