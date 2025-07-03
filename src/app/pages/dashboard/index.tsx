@@ -13,10 +13,17 @@ import {
   SidebarItem,
   SidebarList,
 } from "../../../components/sidebar";
+import {
+  ButtonNotification,
+  ButtonProfile,
+  DisplayDate,
+  Greetings,
+  Topbar,
+} from "../../../components/topbar";
 
 export function Dashboard() {
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-screen pl-80">
       <Sidebar>
         <SidebarList>
           <SidebarItem handleClick={() => {}} text="dashboard" icon={House} />
@@ -50,6 +57,17 @@ export function Dashboard() {
           </SidebarDropdown>
         </SidebarList>
       </Sidebar>
+      <Topbar>
+        <div className="flex flex-col gap-1">
+          <Greetings name="david lownwest" />
+          <DisplayDate />
+        </div>
+        <div className="grow" />
+        <div className="flex items-center gap-6 h-full p-5">
+          <ButtonNotification />
+          <ButtonProfile handleClick={() => {}} />
+        </div>
+      </Topbar>
     </section>
   );
 }
