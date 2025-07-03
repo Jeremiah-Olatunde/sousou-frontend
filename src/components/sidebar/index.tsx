@@ -1,6 +1,24 @@
 import * as Boolean from "fp-ts-std/Boolean";
 import { ChevronDown, X, type LucideIcon } from "lucide-react";
 import { useState } from "react";
+import { Logo } from "../logo";
+import { Support } from "../support";
+
+export function Sidebar({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="absolute top-0 left-0 h-screen w-80 bg-stone-50 flex flex-col">
+      <div className="p-5 border-b border-b-stone-100">
+        <Logo />
+      </div>
+      <div className="grow-1 p-5 flex flex-col">
+        <div className="grow-1">
+          <nav>{children}</nav>
+        </div>
+        <Support />
+      </div>
+    </div>
+  );
+}
 
 export function SidebarList({ children }: { children: React.ReactNode }) {
   return <ul className="flex flex-col gap-2">{children}</ul>;
