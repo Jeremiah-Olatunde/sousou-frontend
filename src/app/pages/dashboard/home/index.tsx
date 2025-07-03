@@ -38,7 +38,7 @@ function CompleteYourProfile() {
           Complete your profile to unlock all features
         </span>
         <div className="flex gap-4  items-center justify-center">
-          <div className="bg-stone-50 rounded-s-full rounded-e-full h-3 grow flex">
+          <div className="bg-stone-50 border border-stone-100 rounded-s-full rounded-e-full h-3 grow flex">
             <span className="bg-stone-300 rounded-s-full rounded-e-full h-full w-1/2" />
           </div>
           <span className="font-inter text-sm font-semibold">50%</span>
@@ -71,7 +71,7 @@ function ButtonSquare({
   return (
     <Button handleClick={() => {}}>
       <div className="w-full h-full flex flex-col gap-2 justify-center items-center ">
-        <div className="p-3 flex justify-center items-center bg-stone-100 rounded-lg aspect-square">
+        <div className="p-3 border border-stone-200 flex justify-center items-center bg-stone-100 rounded-lg aspect-square">
           <Icon className="text-stone-600 size-6" />
         </div>
         <span className="font-inter font-medium text-stone-600 text-sm">

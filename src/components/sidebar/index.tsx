@@ -6,7 +6,7 @@ import { Support } from "../support";
 
 export function Sidebar({ children }: { children: React.ReactNode }) {
   return (
-    <div className="fixed top-0 left-0 h-screen w-80 bg-stone-50 flex flex-col">
+    <div className="fixed top-0 left-0 h-screen w-80 bg-stone-50 flex flex-col border-r border-stone-50">
       <div className="h-20 p-5 border-b border-b-stone-100">
         <Logo />
       </div>

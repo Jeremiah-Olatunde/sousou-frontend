@@ -2,7 +2,7 @@ import { CircleHelp } from "lucide-react";
 
 export function Support() {
   return (
-    <div className="bg-stone-100 rounded-4xl w-full flex flex-col gap-4 p-6">
+    <div className="border border-stone-200 bg-stone-100 rounded-3xl w-full flex flex-col gap-4 p-6">
       <div className="flex justify-center items-center">
         <CircleHelp className="size-10 text-stone-600" />
       </div>
