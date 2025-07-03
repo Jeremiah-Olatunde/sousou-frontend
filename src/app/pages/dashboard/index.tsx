@@ -1,20 +1,19 @@
 import {
   CalendarDays,
-  ChevronDown,
   CircleCheckBig,
-  CircleHelp,
   House,
   Landmark,
   PiggyBank,
   Sparkles,
   UsersRound,
-  X,
-  type LucideIcon,
 } from "lucide-react";
 import { Logo } from "../../../components/logo";
-import { useState } from "react";
-import { invert } from "fp-ts-std/Boolean";
 import { Support } from "../../../components/support";
+import {
+  SidebarDropdown,
+  SidebarItem,
+  SidebarList,
+} from "../../../components/sidebar";
 
 export function Dashboard() {
   return (
@@ -26,21 +25,41 @@ export function Dashboard() {
         <div className="grow-1 p-5 flex flex-col">
           <div className="grow-1">
             <nav>
-              <List>
-                <Item text="dashboard" icon={House} />
-                <Item text="loan services" icon={Landmark}>
-                  <List>
-                    <Item text="apply for loan" icon={PiggyBank} />
-                    <Item text="Pre-Qualification" icon={CircleCheckBig} />
-                    <Item text="loan repayment plan" icon={CalendarDays} />
-                  </List>
-                </Item>
-                <Item text="roommate matching" icon={UsersRound}>
-                  <List>
-                    <Item text="coming soon" icon={Sparkles} />
-                  </List>
-                </Item>
-              </List>
+              <SidebarList>
+                <SidebarItem
+                  handleClick={() => {}}
+                  text="dashboard"
+                  icon={House}
+                />
+                <SidebarDropdown text="loan services" icon={Landmark}>
+                  <SidebarList>
+                    <SidebarItem
+                      handleClick={() => {}}
+                      text="apply for loan"
+                      icon={PiggyBank}
+                    />
+                    <SidebarItem
+                      handleClick={() => {}}
+                      text="Pre-Qualification"
+                      icon={CircleCheckBig}
+                    />
+                    <SidebarItem
+                      handleClick={() => {}}
+                      text="loan repayment plan"
+                      icon={CalendarDays}
+                    />
+                  </SidebarList>
+                </SidebarDropdown>
+                <SidebarDropdown text="roommate matching" icon={UsersRound}>
+                  <SidebarList>
+                    <SidebarItem
+                      handleClick={() => {}}
+                      text="coming soon"
+                      icon={Sparkles}
+                    />
+                  </SidebarList>
+                </SidebarDropdown>
+              </SidebarList>
             </nav>
           </div>
           <Support />
@@ -48,46 +67,4 @@ export function Dashboard() {
       </div>
     </section>
   );
-}
-
-function Item({
-  children,
-  text,
-  icon: Icon,
-}: {
-  children?: React.ReactNode;
-  text: string;
-  icon: LucideIcon;
-}) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <li>
-      <button
-        className="cursor-pointer w-full flex gap-2 items-center p-2"
-        onClick={() => setOpen(invert)}
-      >
-        <Icon className="size-5 text-stone-600" />
-        <span className="grow-1 capitalize font-inter font-semibold text-sm text-left text-stone-600">
-          {text}
-        </span>
-
-        {children && (
-          <span className="">
-            {open ? (
-              <X className="text-stone-600 size-5" />
-            ) : (
-              <ChevronDown className="text-stone-600 size-5" />
-            )}
-          </span>
-        )}
-      </button>
-
-      {open && <div className="pl-8">{children}</div>}
-    </li>
-  );
-}
-
-function List({ children }: { children: React.ReactNode }) {
-  return <ul className="flex flex-col gap-2">{children}</ul>;
 }
