@@ -21,7 +21,7 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
 }
 
 export function SidebarList({ children }: { children: React.ReactNode }) {
-  return <ul className="flex flex-col gap-2">{children}</ul>;
+  return <ul className="flex flex-col gap-2 py-2">{children}</ul>;
 }
 
 export function SidebarDropdown({
@@ -74,7 +74,7 @@ export function SidebarItem({
   return (
     <li>
       <button
-        className={`${active && "bg-stone-100 border-l-2 border-stone-500"} cursor-pointer w-full flex gap-2 items-center p-2`}
+        className={`${active && "bg-stone-100 border-stone-500"} border-l-2 border-stone-100/0 cursor-pointer w-full flex gap-2 items-center p-2`}
         onClick={() => handleClick(text)}
       >
         <Icon className="size-5 text-stone-600" />
