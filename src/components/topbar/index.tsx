@@ -2,7 +2,7 @@ import { BellDot, ChevronDown } from "lucide-react";
 
 export function Topbar({ children }: { children: React.ReactNode }) {
   return (
-    <section className="fixed pl-85 top-0 left-0 h-20 w-full border-b border-stone-100 flex items-center px-5">
+    <section className="h-20 w-full border-b border-stone-100 flex items-center px-5">
       {children}
     </section>
   );

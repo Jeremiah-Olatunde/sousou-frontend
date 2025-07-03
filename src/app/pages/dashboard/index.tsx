@@ -20,13 +20,28 @@ import {
   Greetings,
   Topbar,
 } from "../../../components/topbar";
+import { useState } from "react";
+import { DashboardHome } from "./home";
+
+type DashboardPage = "Home";
+
+const Page: Record<DashboardPage, React.ReactNode> = {
+  Home: <DashboardHome />,
+};
 
 export function Dashboard() {
+  const [page, setPage] = useState<DashboardPage>("Home");
+
   return (
-    <section className="relative min-h-screen h-[1000px] pl-80">
+    <section className="relative min-h-screen pl-80">
       <Sidebar>
         <SidebarList>
-          <SidebarItem handleClick={() => {}} text="home" icon={House} active />
+          <SidebarItem
+            active={page === "Home"}
+            handleClick={() => setPage("Home")}
+            icon={House}
+            text="home"
+          />
           <SidebarDropdown text="loan services" icon={Landmark}>
             <SidebarList>
               <SidebarItem
@@ -58,17 +73,21 @@ export function Dashboard() {
         </SidebarList>
       </Sidebar>
 
-      <Topbar>
-        <div className="flex flex-col gap-1">
-          <Greetings name="david lownwest" />
-          <DisplayDate />
-        </div>
-        <div className="grow" />
-        <div className="flex items-center gap-6 h-full">
-          <ButtonNotification />
-          <ButtonProfile handleClick={() => {}} />
-        </div>
-      </Topbar>
+      <div className="flex flex-col min-h-screen">
+        <Topbar>
+          <div className="flex flex-col gap-1">
+            <Greetings name="david lownwest" />
+            <DisplayDate />
+          </div>
+          <div className="grow" />
+          <div className="flex items-center gap-6 h-full">
+            <ButtonNotification />
+            <ButtonProfile handleClick={() => {}} />
+          </div>
+        </Topbar>
+
+        <div className="px-5 py-8 grow">{Page[page]}</div>
+      </div>
     </section>
   );
 }
