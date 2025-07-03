@@ -61,10 +61,12 @@ export function SidebarDropdown({
 }
 
 export function SidebarItem({
+  active,
   text,
   icon: Icon,
   handleClick,
 }: {
+  active?: boolean;
   text: string;
   icon: LucideIcon;
   handleClick: (clicked: string) => void;
@@ -72,7 +74,7 @@ export function SidebarItem({
   return (
     <li>
       <button
-        className="cursor-pointer w-full flex gap-2 items-center p-2"
+        className={`${active && "bg-stone-100 border-l-2 border-stone-500"} cursor-pointer w-full flex gap-2 items-center p-2`}
         onClick={() => handleClick(text)}
       >
         <Icon className="size-5 text-stone-600" />

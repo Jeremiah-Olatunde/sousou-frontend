@@ -26,7 +26,7 @@ export function Dashboard() {
     <section className="relative min-h-screen h-[1000px] pl-80">
       <Sidebar>
         <SidebarList>
-          <SidebarItem handleClick={() => {}} text="dashboard" icon={House} />
+          <SidebarItem handleClick={() => {}} text="home" icon={House} active />
           <SidebarDropdown text="loan services" icon={Landmark}>
             <SidebarList>
               <SidebarItem
