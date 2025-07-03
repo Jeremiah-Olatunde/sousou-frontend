@@ -57,13 +57,14 @@ export function Dashboard() {
           </SidebarDropdown>
         </SidebarList>
       </Sidebar>
+
       <Topbar>
         <div className="flex flex-col gap-1">
           <Greetings name="david lownwest" />
           <DisplayDate />
         </div>
         <div className="grow" />
-        <div className="flex items-center gap-6 h-full p-5">
+        <div className="flex items-center gap-6 h-full">
           <ButtonNotification />
           <ButtonProfile handleClick={() => {}} />
         </div>
