@@ -22,11 +22,13 @@ import {
 } from "../../../components/topbar";
 import { useState } from "react";
 import { DashboardHome } from "./home";
+import { LoanApplication } from "./loan-application";
 
-type DashboardPage = "Home";
+type DashboardPage = "Home" | "LoanApplication";
 
 const Page: Record<DashboardPage, React.ReactNode> = {
   Home: <DashboardHome />,
+  LoanApplication: <LoanApplication />,
 };
 
 export function Dashboard() {
@@ -45,9 +47,10 @@ export function Dashboard() {
           <SidebarDropdown text="loan services" icon={Landmark}>
             <SidebarList>
               <SidebarItem
-                handleClick={() => {}}
+                handleClick={() => setPage("LoanApplication")}
                 text="apply for loan"
                 icon={PiggyBank}
+                active={page === "LoanApplication"}
               />
               <SidebarItem
                 handleClick={() => {}}
@@ -86,7 +89,7 @@ export function Dashboard() {
           </div>
         </Topbar>
 
-        <div className="px-5 py-8 grow">{Page[page]}</div>
+        <div className="px-5 py-8 grow flex">{Page[page]}</div>
       </div>
     </section>
   );

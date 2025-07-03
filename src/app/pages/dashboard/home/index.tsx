@@ -9,7 +9,7 @@ import {
 
 export function DashboardHome() {
   return (
-    <section>
+    <section className="grow">
       <div className="flex flex-col gap-8">
         <CompleteYourProfile />
         <div className="flex gap-8">
