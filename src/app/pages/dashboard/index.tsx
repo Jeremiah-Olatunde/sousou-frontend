@@ -23,7 +23,7 @@ import {
 
 export function Dashboard() {
   return (
-    <section className="relative min-h-screen pl-80">
+    <section className="relative min-h-screen h-[1000px] pl-80">
       <Sidebar>
         <SidebarList>
           <SidebarItem handleClick={() => {}} text="dashboard" icon={House} />
